@@ -5,44 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness one</title>
-    <link rel="icon" type="image/png" href="<?php bloginfo('stylesheet_directory'); ?>/landing/favicon.ico">
+    <link rel="icon" type="image/png" href="../example.github.io/resource/logo.png">
     <!-- <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/landing/style.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <style>
-        /* @font-face {
-            font-family: 'Gilroy';
-            src: url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-BlackItalic.eot');
-            src: local('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy Black Italic'), local('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-BlackItalic'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-BlackItalic.eot?#iefix') format('embedded-opentype'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-BlackItalic.woff') format('woff'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-BlackItalic.ttf') format('truetype');
-            font-weight: 900;
-            font-style: italic;
-        }
 
         @font-face {
-            font-family: 'Gilroy';
-            src: url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-MediumItalic.eot');
-            src: local('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy Medium Italic'), local('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-MediumItalic'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-MediumItalic.eot?#iefix') format('embedded-opentype'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-MediumItalic.woff') format('woff'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-MediumItalic.ttf') format('truetype');
-            font-weight: 500;
-            font-style: italic;
-        }
+    font-family: 'Gilroy Light';
+    src: url('Gilroy-Light.eot');
+    src: url('Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+    url('Gilroy-Light.woff') format('woff'),
+    url('Gilroy-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
 
-        @font-face {
-            font-family: 'Gilroy';
-            src: url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-SemiBold.eot');
-            src: local('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy SemiBold'), local('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-SemiBold'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-SemiBold.woff') format('woff'),
-                url('<?php bloginfo('stylesheet_directory'); ?>/landing/resources/fonts/Gilroy-SemiBold.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-        } */
+       @font-face {
+    font-family: 'Gilroy Regular';
+    src: url('Gilroy-Regular.eot');
+    src: url('Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+    url('Gilroy-Regular.woff') format('woff'),
+    url('Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'Gilroy Medium';
+    src: url('Gilroy-Medium.eot');
+    src: url('Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+    url('Gilroy-Medium.woff') format('woff'),
+    url('Gilroy-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'Gilroy Semibold';
+    src: url('Gilroy-SemiBold.eot');
+    src: url('Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('Gilroy-SemiBold.woff') format('woff'),
+    url('Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'Gilroy Bold';
+    src: url('Gilroy-Bold.eot');
+    src: url('Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+    url('Gilroy-Bold.woff') format('woff'),
+    url('Gilroy-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'Gilroy Bold Italic';
+    src: url('Gilroy-BoldItalic.eot');
+    src: url('Gilroy-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('Gilroy-BoldItalic.woff') format('woff'),
+    url('Gilroy-BoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
 
         html {
             scroll-behavior: smooth;
@@ -73,11 +102,13 @@
 
         a {
             text-decoration: none;
+            font-family: 'Gilroy Regular';
         }
 
         button {
             outline: none;
             border: none;
+            font-family: 'Gilroy Semibold';
         }
 
         input {
@@ -248,8 +279,10 @@
             justify-content: space-evenly;
         }
 
-        ul li{
-            font-size: 20px;
+        ul li a{
+            font-size: 16px;
+            text-decoration: none;
+            color: whitesmoke;
         }
         button{
             font-size: 20px;
@@ -296,6 +329,8 @@
         .heading-title{
             font-size: 80px;
             margin-top: 46px;
+            font-family: 'Gilroy Bold Italic';
+    
         }
 
         .heading-title span{
@@ -1494,7 +1529,7 @@
                     </ul>
                 </div>
                 <button class="button-1">
-                    obține
+                    <a href="#formbox">obține</a>
                 </button>
             </div>
 
@@ -1511,7 +1546,7 @@
                         Achiziționează abonamentul tău individual<br/>sau contactează-ne 022 000 707
                     </div>
                     <button class="button-1">
-                        obține oferta
+                        <a href="#formbox">obține oferta</a>
                     </button>
                 </div>
                 <div class="anima-right">
@@ -1528,7 +1563,7 @@
 
         <div class="circle">
             <div class="curve-text">
-                <div class="arrow-down"></div>
+                <div class="arrow-down"><a href="#servicii"></a></div>
             </div>
         </div>
 
@@ -1611,21 +1646,21 @@
                             <div class="card-icon"><img src="../example.github.io/resource/icon-aburi.png" alt=""></div>
                             <div class="card-title">Camera de aburi</div>
                             <div class="card-descr">Regim de temperaturi ușoare de la 45 la 100 de grade, vă permite să încălziți profund mușchii și articulațiile fără nici o sarcină asupra inimii.</div>
-                            <div class="card-button">Doresc oferta</div>
+                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
                         </div>
 
                          <div class="swiper-slide">
                             <div class="card-icon"><img src="../example.github.io/resource/icon-dumbbell.png" alt=""></div>
                             <div class="card-title">Antrenamente copii</div>
                             <div class="card-descr">Programul de antrenament în grup pentru copii oferă o gamă largă de antrenamente interesante.</div>
-                            <div class="card-button">Doresc oferta</div>
+                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="card-icon"><img src="../example.github.io/resource/icon-cardio.png" alt=""></div>
                             <div class="card-title">Sală cardio</div>
                             <div class="card-descr">Benzi de alergat, biciclete fitness, biciclete eliptice, stepper.</div>
-                            <div class="card-button">Doresc oferta</div>
+                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
                         </div>
 
                        
@@ -1633,21 +1668,21 @@
                             <div class="card-icon"><img src="../example.github.io/resource/icon-dumbbell.png" alt=""></div>
                             <div class="card-title">Sala de forță</div>
                             <div class="card-descr">Echipat cu o linie ultra-modernă de simulatoare.</div>
-                            <div class="card-button">Doresc oferta</div>
+                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="card-icon"><img src="../example.github.io/resource/icon-piscina.png" alt=""></div>
                             <div class="card-title">Piscina de 25 metri</div>
                             <div class="card-descr">Metodă de curățarea apei constituită din 5 etape, cu utilizarea sării și fără miros de clor.</div>
-                            <div class="card-button">Doresc oferta</div>
+                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="card-icon"><img src="../example.github.io/resource/icon-step.png" alt=""></div>
                             <div class="card-title">Antrenamente adulți</div>
                             <div class="card-descr">Program de antrenamente extins conceput pentru o gamă largă de preferinţe şi nivel de pregătire.</div>
-                            <div class="card-button">Doresc oferta</div>
+                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
                         </div>
 
                     
