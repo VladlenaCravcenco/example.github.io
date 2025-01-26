@@ -1,1897 +1,2094 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitness one</title>
-    <link rel="icon" type="image/png" href="../example.github.io/resource/logo.png">
+    <link
+      rel="icon"
+      type="image/png"
+      href="../example.github.io/resource/logo.png"
+    />
     <!-- <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/landing/style.css"> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
     <style>
-
-        @font-face {
-    font-family: 'Gilroy Light';
-    src: url('../example.github.io/fonts/Gilroy-Light.eot');
-    src: url('Gilroy-Light.eot?#iefix') format('embedded-opentype'),
-    url('../example.github.io/fonts/Gilroy-Light.woff') format('woff'),
-    url('../example.github.io/fonts/Gilroy-Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-       @font-face {
-    font-family: 'Gilroy Regular';
-    src: url('../example.github.io/fonts/Gilroy-Regular.eot');
-    src: url('Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../example.github.io/fonts/Gilroy-Regular.woff') format('woff'),
-    url('../example.github.io/fonts/Gilroy-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-    @font-face {
-    font-family: 'Gilroy Medium';
-    src: url('../example.github.io/fonts/Gilroy-Medium.eot');
-    src: url('Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../example.github.io/fonts/Gilroy-Medium.woff') format('woff'),
-    url('../example.github.io/fonts/Gilroy-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-    @font-face {
-    font-family: 'Gilroy Semibold';
-    src: url('../example.github.io/fonts/Gilroy-SemiBold.eot');
-    src: url('Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'),
-    url('../example.github.io/fonts/Gilroy-SemiBold.woff') format('woff'),
-    url('../example.github.io/fonts/Gilroy-SemiBold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-    @font-face {
-    font-family: 'Gilroy Bold';
-    src: url('../example.github.io/fonts/Gilroy-Bold.eot');
-    src: url('Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../example.github.io/fonts/Gilroy-Bold.woff') format('woff'),
-    url('../example.github.io/fonts/Gilroy-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-    @font-face {
-    font-family: 'Gilroy Bold Italic';
-    src: url('../example.github.io/fonts/Gilroy-BoldItalic.eot');
-    src: url('Gilroy-BoldItalic.eot?#iefix') format('embedded-opentype'),
-    url('../example.github.io/fonts/Gilroy-BoldItalic.woff') format('woff'),
-    url('../example.github.io/fonts/Gilroy-BoldItalic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        body {
-            margin: 0px;
-            padding: 0px;
-            background-color: #090909;
-            font-family: 'Gilroy';
-            overflow-x: hidden;
-            color: #fff;
-        }
-
-        * {
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            color: whitesmoke;
-            font-family: 'Gilroy Regular';
-
-
-        }
-
-        a {
-            text-decoration: none;
-            color: whitesmoke;
-        }
-
-        button {
-            outline: none;
-            border: none;
-            font-family: 'Gilroy Semibold';
-            color: whitesmoke;
-        }
-
-        input {
-            outline: none;
-            border: none;
-        }
-
-        
-
-        /* --------------COUNTER---------------- */
-
-        #hour,
-        #min,
-        #sec,
-        #day {
-            padding: 5px;
-            position: relative;
-            display: block;
-            width: 50px;
-        }
-
-        .countdown_amount div p {
-            float: left;
-            font-size: 30px;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .countdown_amount {
-            margin-top: 6px;
-        }
-
-        .counter p {
-            margin: 0px;
-            padding: 0px;
-            color: #000;
-            font-size: 25px;
-            font-weight: bold;
-            position: absolute;
-        }
-
-        #timer_wrap {
-            position: relative;
-        }
-
-        #razd {
-            float: left;
-            color: #000;
-            font-weight: bold;
-            font-size: 3em;
-            margin: 0px 3px 0px 3px;
-        }
-
-        #stop {
-            color: white;
-            font-size: 2em;
-            margin: 15px 10px 10px 25px;
-            position: absolute;
-        }
-
-        .countdown_section .countdown_amount:nth-child(2) {
-            margin-left: 12px;
-        }
-
-        .countdown_section .countdown_amount:first-child {
-            margin-left: 12px;
-        }
-
-        .countdown_amount {
-            float: left;
-        }
-
-        .double-dots {
-            position: absolute;
-            right: 25px;
-            top: 5px;
-        }
-
-        .quiz-button {
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .quiz-subtitle:last-child {
-            margin-bottom: 15px;
-        }
-
-        #underconstruction-container {
-            /* position: fixed; */
-            width: 100%;
-        }
-
-        #content {
-            text-align: center;
-            overflow: hidden;
-        }
-
-        #countdown-container {
-            clear: both;
-            padding: 12px 42px 36px 42px;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .countdown_row {
-            display: inline-block;
-            overflow: hidden;
-        }
-
-
-        .countdown_section {
-            font-family: 'Gilroy';
-            font-size: 12px;
-            float: left;
-            text-align: center;
-            text-transform: uppercase;
-            color: #fff;
-            width: 70px;
-            font-weight: 700;
-            height: 70px;
-            margin-left: 10px;
-            background: #EC1616;
-        }
-
-        .countdown_amount {
-            font-family: 'Gilroy';
-            font-weight: bold;
-            font-size: 33px;
-            text-align: center;
-            height: 40px;
-            color: #fff;
-        }
-
-
-
-
-
-
-
-        /* 1 SCREEN */
-
-        
-
-        .main-1{
-            background-image: url(../example.github.io/resource/bg.png);
-            background-position: top center;
-            background-repeat: no-repeat;
-            margin: auto;
-            height: 990px;
-        }
-
-        .header{
-            width: 1530px;
-            height: 150px;
-            align-items: center;
-            margin: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .logo img{
-            width: 240px;
-        }
-        ul{
-            flex-direction: row;
-            display: flex;
-            width: 200px;
-            justify-content: space-evenly;
-        }
-
-        ul li a{
-            font-size: 16px;
-            text-decoration: none;
-            color: whitesmoke;
-        }
-        button{
-            font-size: 20px;
-            color: #fff;
-            height: 56px;
-            margin: 0;
-            border-radius: 50px;
-            padding: 10px 30px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-        }
-
-        .container-1{
-            width: 1530px;
-            height: 630px;
-            display: flex;
-            flex-direction: row;
-            margin: auto;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-        .anima-right{
-            position: relative;
-            left: 150px;
-        }
-
-        .teg{
-            width: 160px;
-            height: 40px;
-            font-size: 16px;
-            background:#1B1B1B;
-            border-radius: 50px;
-            display: flex;
-            flex-direction: row;
-            padding: 8px 12px;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        .teg .icon{
-            height: 24px;
-        }
-
-        .heading-title{
-            font-size: 80px;
-            margin-top: 46px;
-            font-family: 'Gilroy Bold Italic';
-    
-        }
-
-        .heading-title span{
-        text-transform: uppercase;
-        }
-
-        .descr-text{
-            font-size: 24px;
-            margin-top: 40px;
-            font-family: 'Gilroy Regular';
-        }
-        .text-left button{
-            margin-top: 40px;
-            cursor: pointer;
-        }
-
-
-
-        .parallel{
-            width: 800px;
-            height: 380px;
-            transform: skew(-20deg);
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            position: relative;
-            z-index: 0;
-            top: 460px;
-
-        }
-
-        .person img{
-            width: 600px;
-            position: relative;
-            bottom: 175px;
-            left: 70px;
-        }
-
-
-        .circle{
-            width: 173px;
-            height: 173px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            border-radius: 100px;
-            padding: 12px;
-            position: relative;
-            top: -90px;
-            margin: auto;
-            
-        }
-
-        .circle .curve-text{
-            background-image: url(../example.github.io/resource/curve-text.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 150px;
-            height: 150px;
-            animation: 30s curve-round linear infinite;
-            cursor: pointer;
-        }
-        
-
-        @keyframes curve-round {
-            from{
-                transform: rotate(0);
-            }to{
-                transform: rotate(360deg);
-            }
-        }
-
-        .circle .curve-text .arrow-down{
-            width: 37px;
-            height: 150px;
-            background-image: url(../example.github.io/resource/arrow-down.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin: auto;
-            animation: 30s arrow-round linear infinite;
-            
-
-        }
-
-        @keyframes arrow-round {
-            from{
-                transform: rotate(0);
-            }to{
-                transform: rotate(-360deg);
-            }
-        }
+      @font-face {
+        font-family: "Gilroy Light";
+        src: url("../example.github.io/fonts/Gilroy-Light.eot");
+        src: url("Gilroy-Light.eot?#iefix") format("embedded-opentype"),
+          url("../example.github.io/fonts/Gilroy-Light.woff") format("woff"),
+          url("../example.github.io/fonts/Gilroy-Light.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Gilroy Regular";
+        src: url("../example.github.io/fonts/Gilroy-Regular.eot");
+        src: url("Gilroy-Regular.eot?#iefix") format("embedded-opentype"),
+          url("../example.github.io/fonts/Gilroy-Regular.woff") format("woff"),
+          url("../example.github.io/fonts/Gilroy-Regular.ttf")
+            format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Gilroy Medium";
+        src: url("../example.github.io/fonts/Gilroy-Medium.eot");
+        src: url("Gilroy-Medium.eot?#iefix") format("embedded-opentype"),
+          url("../example.github.io/fonts/Gilroy-Medium.woff") format("woff"),
+          url("../example.github.io/fonts/Gilroy-Medium.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Gilroy Semibold";
+        src: url("../example.github.io/fonts/Gilroy-SemiBold.eot");
+        src: url("Gilroy-SemiBold.eot?#iefix") format("embedded-opentype"),
+          url("../example.github.io/fonts/Gilroy-SemiBold.woff") format("woff"),
+          url("../example.github.io/fonts/Gilroy-SemiBold.ttf")
+            format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Gilroy Bold";
+        src: url("../example.github.io/fonts/Gilroy-Bold.eot");
+        src: url("Gilroy-Bold.eot?#iefix") format("embedded-opentype"),
+          url("../example.github.io/fonts/Gilroy-Bold.woff") format("woff"),
+          url("../example.github.io/fonts/Gilroy-Bold.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Gilroy Bold Italic";
+        src: url("../example.github.io/fonts/Gilroy-BoldItalic.eot");
+        src: url("Gilroy-BoldItalic.eot?#iefix") format("embedded-opentype"),
+          url("../example.github.io/fonts/Gilroy-BoldItalic.woff")
+            format("woff"),
+          url("../example.github.io/fonts/Gilroy-BoldItalic.ttf")
+            format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #090909;
+        font-family: "Gilroy";
+        overflow-x: hidden;
+        color: #fff;
+      }
+
+      * {
+        padding: 0;
+        box-sizing: border-box;
+        cursor: url('../example.github.io/resource/Cursor/Aero/Cursor/Aero/aqua_red.png'),auto;
+
+
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        color: whitesmoke;
+        font-family: "Gilroy Regular";
+      }
+
+      a {
+        text-decoration: none;
+        color: whitesmoke;
+        cursor: url('../example.github.io/resource/Cursor/Aero/Cursor/Aero/aqua_red.png'),auto;
+      }
+
+      button {
+        outline: none;
+        border: none;
+        font-family: "Gilroy Semibold";
+        color: whitesmoke;
+        cursor: url('../example.github.io/resource/Cursor/Aero/Cursor/Aero/aqua_red.png'),auto;
+      }
+
+      input {
+        outline: none;
+        border: none;
+        cursor: url('../example.github.io/resource/cursor-text.png'), auto;
        
-        
-        .numbers{
-            display: flex;
-            width: 1430px;
-            justify-content: space-between;
-            margin: auto;
-            position: relative;
-            bottom: 220px;
+      }
+
+      /* --------------COUNTER---------------- */
+
+      #hour,
+      #min,
+      #sec,
+      #day {
+        padding: 5px;
+        position: relative;
+        display: block;
+        width: 50px;
+      }
+
+      .countdown_amount div p {
+        float: left;
+        font-size: 30px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .countdown_amount {
+        margin-top: 6px;
+      }
+
+      .counter p {
+        margin: 0px;
+        padding: 0px;
+        color: #000;
+        font-size: 25px;
+        font-weight: bold;
+        position: absolute;
+      }
+
+      #timer_wrap {
+        position: relative;
+      }
+
+      #razd {
+        float: left;
+        color: #000;
+        font-weight: bold;
+        font-size: 3em;
+        margin: 0px 3px 0px 3px;
+      }
+
+      #stop {
+        color: white;
+        font-size: 2em;
+        margin: 15px 10px 10px 25px;
+        position: absolute;
+      }
+
+      .countdown_section .countdown_amount:nth-child(2) {
+        margin-left: 12px;
+      }
+
+      .countdown_section .countdown_amount:first-child {
+        margin-left: 12px;
+      }
+
+      .countdown_amount {
+        float: left;
+      }
+
+      .double-dots {
+        position: absolute;
+        right: 25px;
+        top: 5px;
+      }
+
+      .quiz-button {
+        align-items: center;
+       
+      }
+
+      .quiz-subtitle:last-child {
+        margin-bottom: 15px;
+      }
+
+      #underconstruction-container {
+        /* position: fixed; */
+        width: 100%;
+      }
+
+      #content {
+        text-align: center;
+        overflow: hidden;
+      }
+
+      #countdown-container {
+        clear: both;
+        padding: 12px 42px 36px 42px;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .countdown_row {
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      .countdown_section {
+        font-family: "Gilroy";
+        font-size: 12px;
+        float: left;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        width: 70px;
+        font-weight: 700;
+        height: 70px;
+        margin-left: 10px;
+        background: #ec1616;
+      }
+
+      .countdown_amount {
+        font-family: "Gilroy";
+        font-weight: bold;
+        font-size: 33px;
+        text-align: center;
+        height: 40px;
+        color: #fff;
+      }
+
+      /* 1 SCREEN */
+
+      .main-1 {
+        background-image: url(../example.github.io/resource/bg.png);
+        background-position: top center;
+        background-repeat: no-repeat;
+        margin: auto;
+        height: 990px;
+      }
+
+      .header {
+        width: 1530px;
+        height: 150px;
+        align-items: center;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .logo img {
+        width: 240px;
+      }
+      ul {
+        flex-direction: row;
+        display: flex;
+        width: 200px;
+        justify-content: space-evenly;
+      }
+
+      ul li a {
+        font-size: 16px;
+        text-decoration: none;
+        color: whitesmoke;
+      }
+      button {
+        font-size: 20px;
+        color: #fff;
+        height: 56px;
+        margin: 0;
+        border-radius: 50px;
+        padding: 10px 30px;
+        background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+ 
+      }
+
+      .container-1 {
+        width: 1530px;
+        height: 630px;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+      }
+      .anima-right {
+        position: relative;
+        left: 150px;
+      }
+
+      .teg {
+        width: 160px;
+        height: 40px;
+        font-size: 16px;
+        background: #1b1b1b;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: row;
+        padding: 8px 12px;
+        align-items: center;
+        justify-content: space-around;
+        animation: fadein 1.5s ease-in-out;
+        animation-delay: .3s;
+        animation-fill-mode: forwards;
+        position: relative;
+        left: -700px;
+      }
+
+      .teg .icon {
+        height: 24px;
+
+      }
+
+
+
+
+
+      .heading-title {
+        font-size: 80px;
+        margin-top: 46px;
+        position: relative;
+        left: -700px;
+        font-family: "Gilroy Bold Italic";
+        animation: fadein 1.5s ease-in-out;
+        animation-delay: .6s;
+        animation-fill-mode: forwards;
+      }
+
+      .heading-title span {
+        text-transform: uppercase;
+      }
+
+      @keyframes fadein {
+
+          from{
+            opacity: 0;
+            transform: translateX(0);
+            
+          }to{
+            opacity: 100;
+            transform: translateX(700px);
+            
+
+          }
+      }
+
+      .descr-text {
+        font-size: 24px;
+        margin-top: 40px;
+        font-family: "Gilroy Regular";
+        animation: fadein 1.5s ease-in-out;
+        animation-delay: .9s;
+        animation-fill-mode: forwards;
+        position: relative;
+        left: -700px;
+      }
+      .text-left button {
+        margin-top: 40px;
+    
+        animation: fadein 1.5s ease-in-out;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+        position: relative;
+        left: -700px;
+      }
+
+      .parallel {
+        width: 800px;
+        height: 380px;
+        /* transform: skew(-20deg); */
+        background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+        z-index: 0;
+        top: 460px;
+        animation: fadein-par 1.5s ease-in-out;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+        position: relative;
+        right: -800px;
+
+      }
+
+      @keyframes fadein-par {
+
+from{
+  opacity: 0;
+  transform: translateX(0) skew(0deg);
+  
+}to{
+  opacity: 100;
+  transform: translateX(-800px) skew(-20deg);
+
+}
+}
+
+      .person img {
+        width: 600px;
+        bottom: 175px;
+        animation: fadein-r 1.5s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        position: relative;
+        right: -700px;
+
+      }
+
+      @keyframes fadein-r {
+
+from{
+  opacity: 0;
+  transform: translateX(0);
+  
+}to{
+  opacity: 100;
+  transform: translateX(-650px);
+}
+}
+
+      .circle {
+        width: 173px;
+        height: 173px;
+        background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+        border-radius: 100px;
+        padding: 12px;
+        position: relative;
+        top: -90px;
+        margin: auto;
+      }
+
+      .circle .curve-text {
+        background-image: url(../example.github.io/resource/curve-text.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 150px;
+        height: 150px;
+        animation: 30s curve-round linear infinite;
+      
+      }
+
+      @keyframes curve-round {
+        from {
+          transform: rotate(0);
         }
-
-        .numb-left{
-            display: flex;
-            width:450px;
-            justify-content: space-between;
+        to {
+          transform: rotate(360deg);
         }
+      }
 
-        .numb-right{
-            display: flex;
-            width:450px;
-            justify-content: space-between;
+      .circle .curve-text .arrow-down {
+        width: 37px;
+        height: 150px;
+        background-image: url(../example.github.io/resource/arrow-down.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: auto;
+        animation: 30s arrow-round linear infinite;
+      }
+
+      @keyframes arrow-round {
+        from {
+          transform: rotate(0);
         }
-
-        .numb{
-            text-align: center;
+        to {
+          transform: rotate(-360deg);
         }
-        
-        .num{
-            font-size: 60px;
-            font-family: 'Gilroy Semibold';
+      }
+
+      .numbers {
+        display: flex;
+        width: 1430px;
+        justify-content: space-between;
+        margin: auto;
+        position: relative;
+        bottom: 220px;
+      }
+
+      .numb-left {
+        display: flex;
+        width: 450px;
+        justify-content: space-between;
+      }
+
+      .numb-right {
+        display: flex;
+        width: 450px;
+        justify-content: space-between;
+      }
+
+      .numb {
+        text-align: center;
+      }
+
+      .num {
+        font-size: 60px;
+        font-family: "Gilroy Semibold";
+      }
+
+      .num-descr {
+        font-size: 24px;
+        font-family: "Gilroy Regular";
+      }
+
+      .devider {
+        height: 110px;
+        background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+        width: 100%;
+        position: relative;
+        bottom: 70px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .devider:hover .devider-scroll {
+        animation-play-state: paused;
+      }
+
+      .devider-scroll {
+        font-size: 40px;
+        font-family: "Gilroy medium";
+
+        text-transform: uppercase;
+        width: fit-content;
+        line-height: 110px;
+        animation: autoRun 30s linear infinite;
+        display: inline-flex;
+      }
+
+      .item {
+        padding-right: 10px;
+      }
+
+      @keyframes autoRun {
+        from {
+          transform: translateX(0);
         }
-
-        .num-descr{
-            font-size: 24px;
-            font-family: 'Gilroy Regular';
+        to {
+          transform: translateX(-100%);
         }
+      }
 
-        .devider{
-            height: 110px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            width: 100%;
-            position: relative;
-            bottom: 70px;
-            overflow: hidden;
-            white-space: nowrap;
-        }
+      .container-serv {
+        width: 1515px;
+        margin: auto;
+      }
 
-        .devider:hover .devider-scroll{
-            animation-play-state: paused;
-        }
+      .heading-serv {
+        display: flex;
+        justify-content: space-between;
+      }
 
-        .devider-scroll{
-            font-size: 40px;
-            font-family: 'Gilroy medium';
+      .title {
+        font-size: 80px;
+        font-family: "Gilroy Bold";
+        text-transform: uppercase;
+      }
 
-            text-transform: uppercase;
-            width: fit-content;
-            line-height: 110px;
-            animation: autoRun 30s linear infinite;
-            display: inline-flex;
-        }
-        
+      .arrows {
+        display: flex;
+        align-items: end;
+        width: 160px;
+        justify-content: space-between;
+      }
 
-        .item{
-           padding-right: 10px;
-          
-        }
-
-        @keyframes autoRun {
-            from{
-                transform: translateX(0);
-            }to{
-                transform: translateX(-100%);
-            }
-        }
-
-        .container-serv{
-            width: 1515px;
-            margin: auto;
-        }
-
-        .heading-serv{
-            display: flex;
-            justify-content: space-between;
-        }
+      .arrows :hover{
+        filter:drop-shadow(0px 0px 4px rgb(213, 213, 213));
+        transition: 0.2s ease-in-out;
+      }
+      
 
 
-        .title{
-            font-size: 80px;
-            font-family: 'Gilroy Bold';
-            text-transform: uppercase;
-        }
+      .swiper-slide-active {
+        background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+      }
 
-        .arrows{
-            display: flex;
-            align-items: end;
-            width: 160px;
-            justify-content: space-between;
-        }
+      .swiper {
+        margin-top: 50px;
+      }
+      .swiper-slider {
+        transform: translate3d(0px, 0px, 0px);
+      }
 
-        .swiper-slide-active{
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
+      .swiper-slide {
+        width: 340px !important;
+        height: 340px;
+        background-color: #131313;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 30px;
+        position: relative;
+      }
 
-        }
+      .card-title {
+        position: absolute;
+        top: 130px;
+        font-size: 30px;
+        font-family: "Gilroy Semibold";
+      }
 
-        
-        .swiper{
-            margin-top: 50px;
-        }
-        .swiper-slider{
-            transform: translate3d(0px, 0px, 0px);
-        }
+      .card-descr {
+        font-size: 18px;
+        position: absolute;
+        top: 180px;
+        width: 280px;
+        font-family: "Gilroy Regular";
+      }
 
-        .swiper-slide{
-            width: 340px!important;
-            height: 340px;
-            background-color: #131313;
-            border-radius: 10px;
-            margin: 15px;
-            padding: 30px;
-            position: relative;
-        }
+      .card-button {
+        font-size: 20px;
+        border-bottom: 2px solid #fff;
+        position: absolute;
+        bottom: 30px;
+     
+        font-family: "Gilroy Semibold";
+      }
 
-        .card-title{
-            position: absolute;
-            top: 130px;
-            font-size: 30px;
-            font-family: 'Gilroy Semibold';
-        }
+      /* FORM */
 
-        .card-descr{
-            font-size: 18px;
-            position: absolute;
-            top: 180px;
-            width: 280px;
-            font-family: 'Gilroy Regular';
-        }
+      
+      .popup {
+        width: 1500px;
+        margin: auto;
+        padding-top: 100px;
+      }
 
-        .card-button{
-            font-size: 20px;
-            border-bottom: 2px solid #fff;
-            position: absolute;
-            bottom: 30px;
-            cursor: pointer;
-            font-family: 'Gilroy Semibold';
-        }
-
-        /* FORM */
-
-        .popup-bg{
-            margin-top: 100px;
-        }
-        .popup{
-            width: 1500px;
-            margin: auto;
-        }
-
-        #formbox{
-        background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
+      #formbox {
+        background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
         border-radius: 10px;
         height: 520px;
-        }
+      }
 
+      .form-title {
+        text-align: center;
+        font-size: 50px;
+        padding-top: 114px;
+        font-family: "Gilroy Bold";
+      }
 
-        .form-title{
-            text-align: center;
-            font-size: 50px;
-            padding-top: 114px;
-            font-family: 'Gilroy Bold';
-        }
+      .form-subtitle {
+        text-align: center;
+        font-size: 24px;
+        padding-top: 30px;
+        font-family: "Gilroy Regular";
+      }
 
-        .form-subtitle{
-            text-align: center;
-            font-size: 24px;
-            padding-top: 30px;
-            font-family: 'Gilroy Regular';
-        }
-
-
-        .register-form {
+      .register-form {
         text-align: center;
         width: 1270px;
         margin: auto;
         padding-top: 70px;
         display: flex;
         justify-content: space-evenly;
-        }
+      }
+
+      .form input {
+        width: 360px;
+        height: 80px;
+        border-bottom: 2px solid #740f0e;
+        background-color: transparent;
+      }
+
+      #formbox .form input,
+      #formbox .form textarea {
+        padding: 5px 10px;
+        color: white;
+        font-size: 16px;
+        font-family: "Gilroy Regular";
+      }
+
+      .button-color {
+        background: linear-gradient(90deg, #ffdcdc, #ffffff);
+        border-radius: 10px;
+      }
+
+      .btn{
+        overflow: hidden;
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        outline: none;
        
-        .form input {
-            width: 360px;
-            height: 80px;
-            border-bottom: 2px solid #131313;
-            background-color: transparent;
-        }
+      }
 
-        #formbox .form input,
-        #formbox .form textarea {
-            padding: 5px 10px;
-            color: #740F0E;
-            font-family: 'Gilroy Regular';
-        }
+      .btn:before, .btn:after {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   left: -110%;
+   top: 0;
+   opacity: 0.2;
+   background: #c30c0a;
+   transform: skewX(25deg);
+   transition: .5s ease;
+}
+.btn:hover:before {
+   left: -10%;
+   transition: .3s ease;
+}
+.btn:hover:after {
+   left: -20%;
+}
 
-        .button-color{
-            background-color: #D9D9D9;
-            border-radius: 10px;
-        }
 
-        #formbox .form input[type="submit"] {
-            background-image: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 24px;
-            font-family: 'Gilroy medium';
+      #formbox .form input[type="submit"] {
+        background-image: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: url(../example.github.io/resource/cursor-poiner.png),auto !important;
+        font-size: 24px;
+        font-family: "Gilroy medium";
 
-            border: none !important;
-        }
+        border: none !important;
+      }
 
-        
-        .footer{
-            background-image: url(../example.github.io/resource/gb-footer.png);
-            background-position: center top;
-            background-repeat: no-repeat;
-            height: 500px;
-            margin-top: 100px;
-            text-align: center;
-        }
+      .footer {
+        background-image: url(../example.github.io/resource/gb-footer.png);
+        background-position: center top;
+        background-repeat: no-repeat;
+        height: 500px;
+        margin-top: 50px;
+        text-align: center;
+        position: relative;
+        z-index: 100;
+      }
 
-        .footer-title{
-            font-size: 80px;
-            padding: 50px;
-            text-transform: uppercase;
-            margin-bottom: 130px;
-            font-family: 'Gilroy Bold';
-        }
+      .footer-title {
+        font-size: 80px;
+        padding: 50px;
+        text-transform: uppercase;
+        margin-bottom: 130px;
+        font-family: "Gilroy Bold";
+      }
 
-        .footer-contacts{
-            font-size: 20px;
-            margin: auto;
-            display: flex;
-            width: 400px;
-            justify-content: space-evenly;
-            text-transform: uppercase;
-            font-family: 'Gilroy regular';
-        }
+      .footer-contacts {
+        font-size: 20px;
+        margin: auto;
+        display: flex;
+        width: 400px;
+        justify-content: space-evenly;
+        text-transform: uppercase;
+        font-family: "Gilroy regular";
+      }
 
-        .phone-numbs{
+      .phone-numbs {
         text-align: end;
         width: 300px;
-        }
-        .phone-numbs a{
-            color: whitesmoke;
-            text-decoration: revert;
-            align-items: end;
-        }
-
-        .devider-footer{
-            width: 3px;
-            margin: 0 30px;
-            height: 50px;
-            background-color: whitesmoke;
-        }
-
-        .adress{
-            text-align: start;
-        }
-
-
-
-
-        .copyright {
-            background-color: #fff;
-            color: #1A1A1A;
-            width: 100%;
-            height: 74px;
-        }
-
-        .copyright .details {
-            font-size: 14px;
-            text-align: center;
-            padding-top: 25px;
-            font-family: 'Gilroy Light';
-        }
-
-
-        @media(max-width:1024px){
-            /* 1 SCREEN */
-
-            .main-1{
-            background-image: url(../example.github.io/resource/bg.png);
-            background-position: bottom;
-            background-repeat: no-repeat;
-            margin: auto;
-            height: 800px;
-        }
-
-
-            .header{
-            width: 900px;
-            height:150px;
-            align-items: center;
-            margin: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .logo img{
-            width: 165px;
-        }
-        ul{
-            flex-direction: row;
-            display: flex;
-            width: 200px;
-            justify-content: space-evenly;
-        }
-
-        ul li a{
-            font-size: 16px;
-            text-decoration: none;
-            color: whitesmoke;
-        }
-        button{
-            font-size: 16px;
-            color: #fff;
-            height: 40px;
-            margin: 0;
-            border-radius: 50px;
-            padding: 10px 30px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-        }
-
-
-
-        .container-1{
-            width: 930px;
-            height: 470px;
-            display: flex;
-            flex-direction: row;
-            margin: auto;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-        .anima-right{
-            position: relative;
-            left: 150px;
-        }
-
-        .teg{
-            width: 130px;
-            height: 30px;
-            font-size: 12px;
-            background:#1B1B1B;
-            border-radius: 50px;
-            display: flex;
-            flex-direction: row;
-            padding: 8px 12px;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        .teg .icon{
-            height: 18px;
-        }
-
-        .heading-title{
-            font-size: 60px;
-            margin-top: 34px;
-            width: 500px;
-        }
-
-        .heading-title span{
-        text-transform: uppercase;
-
-        }
-
-        .descr-text{
-            font-size: 18px;
-            margin-top: 30px;
-        }
-        .text-left button{
-            margin-top: 50px;
-        }
-
-
-
-        .parallel{
-            width: 515px;
-            height: 240px;
-            transform: skew(-20deg);
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            position: relative;
-            z-index: 0;
-            top: 325px;
-            left: -130px;
-
-        }
-
-        .person img{
-            width: 400px;
-            position: relative;
-            bottom: 98px;
-            left: -100px;
-        }
-
-
-        .circle{
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            border-radius: 100px;
-            padding: 10px;
-            position: relative;
-            top: -90px;
-            margin: auto;
-        }
-
-        .circle .curve-text{
-            background-image: url(../example.github.io/resource/curve-text.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 130px;
-            height: 130px;
-        }
-
-        .circle .curve-text .arrow-down{
-            width: 32px;
-            height: 130px;
-            background-image: url(../example.github.io/resource/arrow-down.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin: auto;
-        }
-       
-        .numbers{
-            display: flex;
-            width: 900px;
-            justify-content: space-between;
-            margin: auto;
-            position: relative;
-            bottom: 200px;
-        }
-
-        .numb-left{
-            display: flex;
-            width:270px;
-            justify-content: space-between;
-        }
-
-        .numb-right{
-            display: flex;
-            width:270px;
-            justify-content: space-between;
-        }
-
-        .numb{
-            text-align: center;
-        }
-        
-        .num{
-            font-size: 40px;
-        }
-
-        .num-descr{
-            font-size: 16px;
-        }
-
-        .devider{
-            height: 60px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            width: 100%;
-            position: relative;
-            bottom: 100px;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .devider:hover .devider-scroll{
-            animation-play-state: paused;
-        }
-
-        .devider-scroll{
-            font-size: 24px;
-            text-transform: uppercase;
-            width: fit-content;
-            line-height: 60px;
-            animation: autoRun 30s linear infinite;
-            display: inline-flex;
-        }
-        
-
-        .item{
-           padding-right: 10px;
-          
-        }
-
-        @keyframes autoRun {
-            from{
-                transform: translateX(0);
-            }to{
-                transform: translateX(-100%);
-            }
-        }
-
-
-        .container-serv{
-            width: 900px;
-            margin: auto;
-            overflow:hidden;
-        }
-
-        .heading-serv{
-            display: flex;
-            justify-content: space-between;
-        
-        }
-
-
-        .title{
-            font-size: 48px;
-        }
-
-        .arrows{
-            display: flex;
-            align-items: end;
-            width: 97px;
-            justify-content: space-between;
-        }
-
-        .arr img{
-            width: 45px;
-        }
-
-        
-
-        .swiper-slide{
-            width: 220px!important;
-            height: 220px;
-            background-color: #131313;
-            border-radius: 10px;
-            margin: 15px;
-            padding: 20px;
-            position: relative;
-        }
-
-        .card-icon img{
-            height: 70px;
-        }
-
-        .card-title{
-            position: absolute;
-            top: 82px;
-            font-size: 20px;
-        }
-
-        .card-descr{
-            font-size: 12px;
-            position: absolute;
-            top: 114px;
-            width: 190px;
-        }
-
-        .card-button{
-            font-size: 20px;
-            border-bottom: 2px solid #fff;
-            position: absolute;
-            bottom: 20px;
-        }
-
-        /* FORM */
-
-        .popup-bg{
-            margin-top: 65px;
-        }
-        .popup{
-            width: 900px;
-            margin: auto;
-        }
-
-        #formbox{
-        background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-        border-radius: 10px;
-        height: 350px;
-        }
-
-
-        .form-title{
-            text-align: center;
-            font-size: 30px;
-            padding-top: 70px;
-        }
-
-        .form-subtitle{
-            text-align: center;
-            font-size: 14px;
-            padding-top: 20px;
-        }
-
-
-        .register-form {
-        text-align: center;
-        width: 800px;
-        margin: auto;
-        padding-top: 40px;
-        display: flex;
-        justify-content: space-evenly;
-        }
-       
-        .form input {
-            width: 230px;
-            height: 60px;
-            border-bottom: 1px solid #131313;
-            background-color: transparent;
-        }
-
-        #formbox .form input,
-        #formbox .form textarea {
-            padding: 5px 10px;
-            color: #740F0E;
-        }
-
-        .button-color{
-            background-color: #D9D9D9;
-            border-radius: 10px;
-        }
-
-        #formbox .form input[type="submit"] {
-            background-image: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 18px;
-            
-            border: none !important;
-        }
-
-
-        .footer{
-            background-image: url(../example.github.io/resource/gb-footer.png);
-            background-position: center top;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 300px;
-            margin-top: 65px;
-            text-align: center;
-        }
-
-        .footer-title{
-            font-size: 50px;
-            padding-top: 25px;
-            text-transform: uppercase;
-            margin-bottom: 60px;
-        }
-
-        .footer-contacts{
-            font-size: 12px;
-            margin: auto;
-            display: flex;
-            width: 280px;
-            justify-content: space-evenly;
-            text-transform: uppercase;
-        }
-
-        .phone-numbs{
-        text-align: end;
-        width: 180px;
-        display: flex;
-        flex-direction: column;
-        }
-        .phone-numbs a{
-            color: whitesmoke;
-            text-decoration: revert;
-            align-items: end;
-        }
-
-        .devider-footer{
-            width: 3px;
-            margin: 0 20px;
-            height: 30px;
-            background-color: whitesmoke;
-        }
-
-        .adress{
-            text-align: start;
-        }
-
-
-
-
-        .copyright {
-            background-color: #fff;
-            color: #1A1A1A;
-            width: 100%;
-            height: 45px;
-        }
-
-        .copyright .details {
-            font-size: 8px;
-            text-align: center;
-            padding-top: 25px;
-        }
-
-
-
-
-        }
-
-        @media(max-width:450px){
-            /* 1 SCREEN */
-
-        .main-1{
-        background-image: url(../example.github.io/resource/bg-mob.png);
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        margin: auto;
-        height: 660px;
-        }
-
-        .header{
+      }
+      .phone-numbs a {
+        color: whitesmoke;
+        text-decoration: revert;
+        align-items: end;
+      }
+
+      .devider-footer {
+        width: 3px;
+        margin: 0 30px;
+        height: 50px;
+        background-color: whitesmoke;
+      }
+
+      .adress {
+        text-align: start;
+      }
+
+      .copyright {
+        background-color: #fff;
+        color: #1a1a1a;
         width: 100%;
-        height: 80px;
+        height: 74px;
+      }
 
+      .copyright .details {
+        font-size: 14px;
+        text-align: center;
+        padding-top: 25px;
+        font-family: "Gilroy Light";
+      }
+
+      @media (max-width: 1024px) {
+        /* 1 SCREEN */
+
+        .main-1 {
+          background-image: url(../example.github.io/resource/bg.png);
+          background-position: bottom;
+          background-repeat: no-repeat;
+          margin: auto;
+          height: 800px;
         }
 
-        .logo{
-        margin: auto;
+        .header {
+          width: 900px;
+          height: 150px;
+          align-items: center;
+          margin: auto;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .logo img {
+          width: 165px;
+        }
+        ul {
+          flex-direction: row;
+          display: flex;
+          width: 200px;
+          justify-content: space-evenly;
         }
 
-        .logo img{
-            width: 200px;
+        ul li a {
+          font-size: 16px;
+          text-decoration: none;
+          color: whitesmoke;
         }
-        ul{
-            display: none;
-        }
-        .header button{
-            display: none;
-        }
-
-        .container-1{
-            width: 100%;
-            height: 500px;
-            justify-content: center;
-
-        }
-        .anima-right{
-            position: relative;
-            left: 150px;
-        }
-        
-        .teg{
-            margin: auto;
-            width: 112px;
-            height: 25px;
-            font-size: 11px;
-            background:#1B1B1B;
-            border-radius: 50px;
-            display: flex;
-            flex-direction: row;
-            padding: 8px 8px;
-            align-items: center;
-            justify-content: space-around;
+        button {
+          font-size: 16px;
+          color: #fff;
+          height: 40px;
+          margin: 0;
+          border-radius: 50px;
+          padding: 10px 30px;
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
         }
 
-        .teg .icon img{
-            height: 16px;
+        .container-1 {
+          width: 930px;
+          height: 470px;
+          display: flex;
+          flex-direction: row;
+          margin: auto;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .anima-right {
+          position: relative;
+          left: 150px;
         }
 
-        .heading-title{
-            text-align: center;
-            font-size: 40px;
-            margin-top: 23px;
+        .teg {
+          width: 130px;
+          height: 30px;
+          font-size: 12px;
+          background: #1b1b1b;
+          border-radius: 50px;
+          display: flex;
+          flex-direction: row;
+          padding: 8px 12px;
+          align-items: center;
+          justify-content: space-around;
         }
 
-        .heading-title span{
-        text-transform: uppercase;
-
+        .teg .icon {
+          height: 18px;
         }
 
-        .descr-text{
-            text-align: center;
-            font-size: 12px;
-            margin-top: 20px;
-        }
-        .text-left button{
-            margin-top: 120px;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            font-size: 14px;
-            width: 200px;
-            height: 50px;
-            text-transform: uppercase;
+        .heading-title {
+          font-size: 60px;
+          margin-top: 34px;
+          width: 500px;
         }
 
-
-
-        .parallel{
-            display: none;
-
+        .heading-title span {
+          text-transform: uppercase;
         }
 
-        .person img{
-            display: none;
+        .descr-text {
+          font-size: 18px;
+          margin-top: 30px;
+        }
+        .text-left button {
+          margin-top: 50px;
         }
 
-        .circle{
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            border-radius: 100px;
-            padding: 6.5px;
-            position: relative;
-            top: -60px;
-            margin: auto;
+        .parallel {
+          width: 515px;
+          height: 240px;
+          transform: skew(-20deg);
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          position: relative;
+          z-index: 0;
+          top: 325px;
+          left: -130px;
         }
 
-        .circle .curve-text{
-            background-image: url(../example.github.io/resource/curve-text.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 77px;
-            height: 77px;
-            cursor: pointer;
+        .person img {
+          width: 400px;
+          position: relative;
+          bottom: 98px;
+          left: -100px;
         }
 
-        .circle .curve-text .arrow-down{
-            width: 19px;
-            height: 77px;
-            background-image: url(../example.github.io/resource/arrow-down.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin: auto;
-        }
-        
-
-        .numbers{
-            height: 200px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            bottom: 20px;
+        .circle {
+          width: 150px;
+          height: 150px;
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          border-radius: 100px;
+          padding: 10px;
+          position: relative;
+          top: -90px;
+          margin: auto;
         }
 
-        .numb-left{
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
+        .circle .curve-text {
+          background-image: url(../example.github.io/resource/curve-text.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 130px;
+          height: 130px;
         }
 
-        .numb-right{
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
+        .circle .curve-text .arrow-down {
+          width: 32px;
+          height: 130px;
+          background-image: url(../example.github.io/resource/arrow-down.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          margin: auto;
         }
 
-        .numb{
-            text-align: center;
-            width: 130px;
-        }
-        
-        .num{
-            font-size: 40px;
-        }
-
-        .num-descr{
-            font-size: 16px;
+        .numbers {
+          display: flex;
+          width: 900px;
+          justify-content: space-between;
+          margin: auto;
+          position: relative;
+          bottom: 200px;
         }
 
-        .devider{
-            height: 60px;
-            background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            width: 100%;
-            position: relative;
-            bottom: -50px;
-            overflow: hidden;
-            white-space: nowrap;
+        .numb-left {
+          display: flex;
+          width: 270px;
+          justify-content: space-between;
         }
 
-        .devider:hover .devider-scroll{
-            animation-play-state: paused;
+        .numb-right {
+          display: flex;
+          width: 270px;
+          justify-content: space-between;
         }
 
-        .devider-scroll{
-            font-size: 24px;
-            text-transform: uppercase;
-            width: fit-content;
-            line-height: 60px;
-            animation: autoRun 30s linear infinite;
-            display: inline-flex;
+        .numb {
+          text-align: center;
         }
-        
 
-        .item{
-           padding-right: 10px;
-          
+        .num {
+          font-size: 40px;
+        }
+
+        .num-descr {
+          font-size: 16px;
+        }
+
+        .devider {
+          height: 60px;
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          width: 100%;
+          position: relative;
+          bottom: 100px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .devider:hover .devider-scroll {
+          animation-play-state: paused;
+        }
+
+        .devider-scroll {
+          font-size: 24px;
+          text-transform: uppercase;
+          width: fit-content;
+          line-height: 60px;
+          animation: autoRun 30s linear infinite;
+          display: inline-flex;
+        }
+
+        .item {
+          padding-right: 10px;
         }
 
         @keyframes autoRun {
-            from{
-                transform: translateX(0);
-            }to{
-                transform: translateX(-100%);
-            }
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-100%);
+          }
         }
 
-        .servicii-block{
-            margin-top: 100px;
+        .container-serv {
+          width: 900px;
+          margin: auto;
+          overflow: hidden;
         }
 
-
-        .container-serv{
-            width: 100%;
-            margin: auto;
-            height: 500px;
-            position: relative;
+        .heading-serv {
+          display: flex;
+          justify-content: space-between;
         }
 
-        .heading-serv{
-            display: flex;
-            justify-content: space-between;
-            overflow-x: hidden;
+        .title {
+          font-size: 48px;
         }
 
-
-        .title{
-            font-size: 40px;
-            margin-left: 20px;
+        .arrows {
+          display: flex;
+          align-items: end;
+          width: 97px;
+          justify-content: space-between;
         }
 
-        .arrows{
-            display: flex;
-            align-items: end;
-            width: 115px;
-            justify-content: space-between;
-            position: absolute;
-            bottom: 0;
-            right: 20px;
+        .arr img {
+          width: 45px;
         }
 
-        .arr{
-            cursor: pointer;
-        }
-        .arr img{
-            width: 50px;
-        }
-
-
-        
-        .swiper-slide{
-            width: 255px!important;
-            height: 255px;
-            background-color: #131313;
-            border-radius: 10px;
-            margin: 15px;
-            padding: 30px;
-            position: relative;
-            min-width: 0;
+        .swiper-slide {
+          width: 220px !important;
+          height: 220px;
+          background-color: #131313;
+          border-radius: 10px;
+          margin: 15px;
+          padding: 20px;
+          position: relative;
         }
 
-        .card-icon img{
-            height: 80px;
+        .card-icon img {
+          height: 70px;
         }
 
-        .card-title{
-            position: absolute;
-            top: 95px;
-            font-size: 22px;
+        .card-title {
+          position: absolute;
+          top: 82px;
+          font-size: 20px;
         }
 
-        .card-descr{
-            font-size: 12px;
-            position: absolute;
-            top: 130px;
-            width: 80%;
+        .card-descr {
+          font-size: 12px;
+          position: absolute;
+          top: 114px;
+          width: 190px;
         }
 
-        .card-button{
-            font-size: 14px;
-            border-bottom: 2px solid #fff;
-            position: absolute;
-            bottom: 30px;
+        .card-button {
+          font-size: 20px;
+          border-bottom: 2px solid #fff;
+          position: absolute;
+          bottom: 20px;
         }
 
         /* FORM */
 
-        .popup{
-            width: 90%;
-            margin: auto;
+        .popup-bg {
+          margin-top: 65px;
+        }
+        .popup {
+          width: 900px;
+          margin: auto;
+          padding-top: 50px;
         }
 
-        #formbox{
-        background: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-        border-radius: 10px;
-        height: 420px;
-        margin-top: 50px;
+        #formbox {
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          border-radius: 10px;
+          height: 350px;
         }
 
-
-        .form-title{
-            text-align: center;
-            font-size: 24px;
-            padding-top: 50px;
+        .form-title {
+          text-align: center;
+          font-size: 30px;
+          padding-top: 70px;
         }
 
-        .form-subtitle{
-            text-align: center;
-            font-size: 14px;
-            padding-top: 12px;
+        .form-subtitle {
+          text-align: center;
+          font-size: 14px;
+          padding-top: 20px;
         }
-
 
         .register-form {
-        text-align: center;
-        width: 90%;
-        margin: auto;
-        padding-top: 30px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        height: 270px;
+          text-align: center;
+          width: 800px;
+          margin: auto;
+          padding-top: 40px;
+          display: flex;
+          justify-content: space-evenly;
         }
-       
+
         .form input {
-            width: 90%;
-            height: 60px;
-            border-bottom: 2px solid #131313;
-            background-color: transparent;
-            margin: auto;
+          width: 230px;
+          height: 60px;
+          border-bottom: 1px solid #131313;
+          background-color: transparent;
         }
 
         #formbox .form input,
         #formbox .form textarea {
-            padding: 5px 10px;
-            color: #740F0E;
+          padding: 5px 10px;
+          color: #740f0e;
         }
 
-        .button-color{
-            background-color: #D9D9D9;
-            border-radius: 10px;
-            margin-top: 40px;
+        .button-color {
+          background-color: #d9d9d9;
+          border-radius: 10px;
         }
 
         #formbox .form input[type="submit"] {
-            background-image: linear-gradient(-45deg, #802A29, #C30C0A, #802A29);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 24px;
-            
-            border: none !important;
+          background-image: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-transform: uppercase;
+          font-weight: 600;
+          cursor: pointer;
+          font-size: 18px;
+
+          border: none !important;
         }
 
-
-        
-
-        
-
+        .footer {
+          background-image: url(../example.github.io/resource/gb-footer.png);
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 300px;
+          margin-top: 65px;
+          text-align: center;
         }
 
-     
+        .footer-title {
+          font-size: 50px;
+          padding-top: 25px;
+          text-transform: uppercase;
+          margin-bottom: 60px;
+        }
+
+        .footer-contacts {
+          font-size: 12px;
+          margin: auto;
+          display: flex;
+          width: 280px;
+          justify-content: space-evenly;
+          text-transform: uppercase;
+        }
+
+        .phone-numbs {
+          text-align: end;
+          width: 180px;
+          display: flex;
+          flex-direction: column;
+        }
+        .phone-numbs a {
+          color: whitesmoke;
+          text-decoration: revert;
+          align-items: end;
+        }
+
+        .devider-footer {
+          width: 3px;
+          margin: 0 20px;
+          height: 30px;
+          background-color: whitesmoke;
+        }
+
+        .adress {
+          text-align: start;
+        }
+
+        .copyright {
+          background-color: #fff;
+          color: #1a1a1a;
+          width: 100%;
+          height: 45px;
+        }
+
+        .copyright .details {
+          font-size: 8px;
+          text-align: center;
+          padding-top: 25px;
+        }
+      }
+
+      @media (max-width: 450px) {
+        /* 1 SCREEN */
+
+        .main-1 {
+          background-image: url(../example.github.io/resource/bg-mob.png);
+          background-position: bottom center;
+          background-repeat: no-repeat;
+          margin: auto;
+          height: 660px;
+        }
+
+        .header {
+          width: 100%;
+          height: 80px;
+        }
+
+        .logo {
+          margin: auto;
+        }
+
+        .logo img {
+          width: 200px;
+        }
+        ul {
+          display: none;
+        }
+        .header button {
+          display: none;
+        }
+
+        .container-1 {
+          width: 100%;
+          height: 500px;
+          justify-content: center;
+        }
+        .anima-right {
+          position: relative;
+          left: 150px;
+        }
+
+        .teg {
+          margin: auto;
+          width: 112px;
+          height: 25px;
+          font-size: 11px;
+          background: #1b1b1b;
+          border-radius: 50px;
+          display: flex;
+          flex-direction: row;
+          padding: 8px 8px;
+          align-items: center;
+          justify-content: space-around;
+        }
+
+        .teg .icon img {
+          height: 16px;
+        }
+
+        .heading-title {
+          text-align: center;
+          font-size: 40px;
+          margin-top: 23px;
+        }
+
+        .heading-title span {
+          text-transform: uppercase;
+        }
+
+        .descr-text {
+          text-align: center;
+          font-size: 12px;
+          margin-top: 20px;
+        }
+        .text-left button {
+          margin-top: 120px;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          width: 200px;
+          height: 50px;
+          text-transform: uppercase;
+        }
+
+        .parallel {
+          display: none;
+        }
+
+        .person img {
+          display: none;
+        }
+
+        .circle {
+          width: 90px;
+          height: 90px;
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          border-radius: 100px;
+          padding: 6.5px;
+          position: relative;
+          top: -60px;
+          margin: auto;
+        }
+
+        .circle .curve-text {
+          background-image: url(../example.github.io/resource/curve-text.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 77px;
+          height: 77px;
+          cursor: pointer;
+        }
+
+        .circle .curve-text .arrow-down {
+          width: 19px;
+          height: 77px;
+          background-image: url(../example.github.io/resource/arrow-down.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          margin: auto;
+        }
+
+        .numbers {
+          height: 200px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          bottom: 20px;
+        }
+
+        .numb-left {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+        }
+
+        .numb-right {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+        }
+
+        .numb {
+          text-align: center;
+          width: 130px;
+        }
+
+        .num {
+          font-size: 40px;
+        }
+
+        .num-descr {
+          font-size: 16px;
+        }
+
+        .devider {
+          height: 60px;
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          width: 100%;
+          position: relative;
+          bottom: -50px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .devider:hover .devider-scroll {
+          animation-play-state: paused;
+        }
+
+        .devider-scroll {
+          font-size: 24px;
+          text-transform: uppercase;
+          width: fit-content;
+          line-height: 60px;
+          animation: autoRun 30s linear infinite;
+          display: inline-flex;
+        }
+
+        .item {
+          padding-right: 10px;
+        }
+
+        @keyframes autoRun {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+
+        .servicii-block {
+          margin-top: 100px;
+        }
+
+        .container-serv {
+          width: 100%;
+          margin: auto;
+          height: 500px;
+          position: relative;
+        }
+
+        .heading-serv {
+          display: flex;
+          justify-content: space-between;
+          overflow-x: hidden;
+        }
+
+        .title {
+          font-size: 40px;
+          margin-left: 20px;
+        }
+
+        .arrows {
+          display: flex;
+          align-items: end;
+          width: 115px;
+          justify-content: space-between;
+          position: absolute;
+          bottom: 0;
+          right: 20px;
+        }
+
+        .arr {
+          cursor: pointer;
+        }
+        .arr img {
+          width: 50px;
+        }
+
+        .swiper-slide {
+          width: 255px !important;
+          height: 255px;
+          background-color: #131313;
+          border-radius: 10px;
+          margin: 15px;
+          padding: 30px;
+          position: relative;
+          min-width: 0;
+        }
+
+        .card-icon img {
+          height: 80px;
+        }
+
+        .card-title {
+          position: absolute;
+          top: 95px;
+          font-size: 22px;
+        }
+
+        .card-descr {
+          font-size: 12px;
+          position: absolute;
+          top: 130px;
+          width: 80%;
+        }
+
+        .card-button {
+          font-size: 14px;
+          border-bottom: 2px solid #fff;
+          position: absolute;
+          bottom: 30px;
+        }
+
+        /* FORM */
+
+        .popup {
+          width: 90%;
+          margin: auto;
+        }
+
+        #formbox {
+          background: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          border-radius: 10px;
+          height: 420px;
+          margin-top: 50px;
+        }
+
+        .form-title {
+          text-align: center;
+          font-size: 24px;
+          padding-top: 50px;
+        }
+
+        .form-subtitle {
+          text-align: center;
+          font-size: 14px;
+          padding-top: 12px;
+        }
+
+        .register-form {
+          text-align: center;
+          width: 90%;
+          margin: auto;
+          padding-top: 30px;
+          display: flex;
+          justify-content: space-evenly;
+          flex-direction: column;
+          height: 270px;
+        }
+
+        .form input {
+          width: 90%;
+          height: 60px;
+          border-bottom: 2px solid #131313;
+          background-color: transparent;
+          margin: auto;
+        }
+
+        #formbox .form input,
+        #formbox .form textarea {
+          padding: 5px 10px;
+          color: #740f0e;
+        }
+
+        .button-color {
+          background-color: #d9d9d9;
+          border-radius: 10px;
+          margin-top: 40px;
+        }
+
+        #formbox .form input[type="submit"] {
+          background-image: linear-gradient(-45deg, #802a29, #c30c0a, #802a29);
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-transform: uppercase;
+          font-weight: 600;
+          cursor: pointer;
+          font-size: 24px;
+
+          border: none !important;
+        }
+      }
     </style>
 
     <!-- Meta Pixel Code -->
     <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '463512419839279');
-        fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "463512419839279");
+      fbq("track", "PageView");
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=463512419839279&ev=PageView&noscript=1" /></noscript>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=463512419839279&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Meta Pixel Code -->
 
-
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5XS5ZC6');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5XS5ZC6");
+    </script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollSmoother.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="../example.github.io/libs/gsap/gsap.min.js" defer></script>
+    <script
+      src="../example.github.io/libs/gsap/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="../example.github.io/libs/gsap/ScrollSmoother.min.js"
+      defer
+    ></script>
+
     <!-- End Google Tag Manager -->
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XS5ZC6" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5XS5ZC6"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-        
-
+    <div class="wrapper">
+      <div class="content">
         <div class="main-1">
-            <div class="header">
-                <div class="logo">
-                    <img src="../example.github.io/resource/logo.png" alt="">
-                </div>
-                <div class="navbar">
-                    <ul>
-                        <li><a href="#servicii">avantajele</a></li>
-                        <li><a href="#contacte">contacte</a></li>
-                    </ul>
-                </div>
-                <button class="button-1">
-                    <a href="#formbox">obține</a>
-                </button>
+          <div class="header">
+            <div class="logo">
+              <img src="../example.github.io/resource/logo.png" alt="" />
             </div>
-
-            <div class="container-1">
-                <div class="text-left">
-                    <div class="teg">
-                        <div class="icon"><img src="../example.github.io/resource/energy.png" alt=""></div>
-                        <div class="teg-text">Best gym place</div>
-                    </div>
-                    <div class="heading-title">
-                        Începeți anul<br/>cu <span>fitness one</span>
-                    </div>
-                    <div class="descr-text">
-                        Achiziționează abonamentul tău individual<br/>sau contactează-ne 022 000 707
-                    </div>
-                    <button class="button-1">
-                        <a href="#formbox">obține oferta</a>
-                    </button>
-                </div>
-                <div class="anima-right">
-                    <div class="parallel"></div>
-                    <div class="person">
-                        <img src="../example.github.io/resource/gymboy.png" alt=""></div>
-                </div>
+            <div class="navbar">
+              <ul>
+                <li><a href="#servicii">avantajele</a></li>
+                <li><a href="#contacte">contacte</a></li>
+              </ul>
             </div>
-            
-            
+            <button class="button-1">
+              <a href="#formbox">obține</a>
+            </button>
+          </div>
 
-
+          <div class="container-1">
+            <div class="text-left">
+              <div class="teg">
+                <div class="icon">
+                  <img src="../example.github.io/resource/energy.png" alt="" />
+                </div>
+                <div class="teg-text">Best gym place</div>
+              </div>
+              <div class="heading-title">
+                Începeți anul<br />cu <span>fitness one</span>
+              </div>
+              <div class="descr-text">
+                Achiziționează abonamentul tău individual<br />sau
+                contactează-ne 022 000 707
+              </div>
+              <button class="button-1">
+                <a href="#formbox">obține oferta</a>
+              </button>
+            </div>
+            <div class="anima-right">
+              <div class="parallel"></div>
+              <div class="person">
+                <img src="../example.github.io/resource/gymboy.png" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="circle">
-            <div class="curve-text">
-                <div class="arrow-down"></div>
-            </div>
+          <div class="curve-text">
+            <div class="arrow-down"></div>
+          </div>
         </div>
 
         <div class="numbers">
-            <div class="numb-left">
-                <div class="numb">
-                    <div class="num">25</div>
-                    <div class="num-descr">Piscina<br/>de 25 metri</div>
-                </div>
-                <div class="numb">
-                    <div class="num">8</div>
-                    <div class="num-descr">Ani în domeniul<br/>sportului</div>
-                </div>
+          <div class="numb-left">
+            <div class="numb">
+              <div class="num">25</div>
+              <div class="num-descr">Piscina<br />de 25 metri</div>
             </div>
+            <div class="numb">
+              <div class="num">8</div>
+              <div class="num-descr">Ani în domeniul<br />sportului</div>
+            </div>
+          </div>
 
-            <div class="numb-right">
-                <div class="numb">
-                    <div class="num">1000+</div>
-                    <div class="num-descr">de clienți mulțumiți</div>
-                </div>
-                <div class="numb">
-                    <div class="num">20+</div>
-                    <div class="num-descr">Antrenori<br/>profesioniști</div>
-                </div>
+          <div class="numb-right">
+            <div class="numb">
+              <div class="num">1000+</div>
+              <div class="num-descr">de clienți mulțumiți</div>
             </div>
+            <div class="numb">
+              <div class="num">20+</div>
+              <div class="num-descr">Antrenori<br />profesioniști</div>
+            </div>
+          </div>
         </div>
-
 
         <div class="devider">
-            <div class="devider-scroll">
-                <div class="item">antrenamente • </div>
-                <div class="item">spa • </div>
-                <div class="item">hammam • </div>
-                <div class="item">sauna • </div>
-                <div class="item">masaj • </div>
-                <div class="item">înot • </div>
-                <div class="item">cardio • </div> 
-                <div class="item">antrenamente copii • </div>
-            </div>
-            <div class="devider-scroll">
-                <div class="item">antrenamente • </div>
-                <div class="item">spa • </div>
-                <div class="item">hammam • </div>
-                <div class="item">sauna • </div>
-                <div class="item">masaj • </div>
-                <div class="item">înot • </div>
-                <div class="item">cardio • </div> 
-                <div class="item">antrenamente copii • </div>
-            </div>
-            <div class="devider-scroll">
-                <div class="item">antrenamente • </div>
-                <div class="item">spa • </div>
-                <div class="item">hammam • </div>
-                <div class="item">sauna • </div>
-                <div class="item">masaj • </div>
-                <div class="item">înot • </div>
-                <div class="item">cardio • </div> 
-                <div class="item">antrenamente copii • </div>
-            </div>
+          <div class="devider-scroll">
+            <div class="item">antrenamente •</div>
+            <div class="item">spa •</div>
+            <div class="item">hammam •</div>
+            <div class="item">sauna •</div>
+            <div class="item">masaj •</div>
+            <div class="item">înot •</div>
+            <div class="item">cardio •</div>
+            <div class="item">antrenamente copii •</div>
+          </div>
+          <div class="devider-scroll">
+            <div class="item">antrenamente •</div>
+            <div class="item">spa •</div>
+            <div class="item">hammam •</div>
+            <div class="item">sauna •</div>
+            <div class="item">masaj •</div>
+            <div class="item">înot •</div>
+            <div class="item">cardio •</div>
+            <div class="item">antrenamente copii •</div>
+          </div>
+          <div class="devider-scroll">
+            <div class="item">antrenamente •</div>
+            <div class="item">spa •</div>
+            <div class="item">hammam •</div>
+            <div class="item">sauna •</div>
+            <div class="item">masaj •</div>
+            <div class="item">înot •</div>
+            <div class="item">cardio •</div>
+            <div class="item">antrenamente copii •</div>
+          </div>
         </div>
-           
 
         <div id="servicii" class="servicii-block">
-            <div class="container-serv">
+          <div class="container-serv">
+            <div class="heading-serv">
+              <div class="title">Servicii<br />ale clubului</div>
+              <div class="arrows">
+                <div class="arr button-prev">
+                 <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M53 36.5H21M21 36.5L32.7736 48M21 36.5L32.7736 25M73 37C73 56.8823 56.8823 73 37 73C17.1177 73 1 56.8823 1 37C1 17.1177 17.1177 1 37 1C56.8823 1 73 17.1177 73 37Z" stroke="#ADAAA8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
-                <div class="heading-serv">
-                    <div class="title">Servicii<br/>ale clubului</div>
-                    <div class="arrows">
-                        <div class="arr button-prev"><img src="../example.github.io/resource/arrow-l.png" alt="left"></div>
-                        <div class="arr button-next"><img src="../example.github.io/resource/arrow-r.png" alt="right"></div>
-                    </div>
                 </div>
-                
-
-
-                <div class="swiper mySwiper">
-
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card-icon"><img src="../example.github.io/resource/icon-aburi.png" alt=""></div>
-                            <div class="card-title">Camera de aburi</div>
-                            <div class="card-descr">Regim de temperaturi ușoare de la 45 la 100 de grade, vă permite să încălziți profund mușchii și articulațiile fără nici o sarcină asupra inimii.</div>
-                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
-                        </div>
-
-                         <div class="swiper-slide">
-                            <div class="card-icon"><img src="../example.github.io/resource/icon-dumbbell.png" alt=""></div>
-                            <div class="card-title">Antrenamente copii</div>
-                            <div class="card-descr">Programul de antrenament în grup pentru copii oferă o gamă largă de antrenamente interesante.</div>
-                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card-icon"><img src="../example.github.io/resource/icon-cardio.png" alt=""></div>
-                            <div class="card-title">Sală cardio</div>
-                            <div class="card-descr">Benzi de alergat, biciclete fitness, biciclete eliptice, stepper.</div>
-                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
-                        </div>
-
-                       
-                        <div class="swiper-slide">
-                            <div class="card-icon"><img src="../example.github.io/resource/icon-dumbbell.png" alt=""></div>
-                            <div class="card-title">Sala de forță</div>
-                            <div class="card-descr">Echipat cu o linie ultra-modernă de simulatoare.</div>
-                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card-icon"><img src="../example.github.io/resource/icon-piscina.png" alt=""></div>
-                            <div class="card-title">Piscina de 25 metri</div>
-                            <div class="card-descr">Metodă de curățarea apei constituită din 5 etape, cu utilizarea sării și fără miros de clor.</div>
-                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card-icon"><img src="../example.github.io/resource/icon-step.png" alt=""></div>
-                            <div class="card-title">Antrenamente adulți</div>
-                            <div class="card-descr">Program de antrenamente extins conceput pentru o gamă largă de preferinţe şi nivel de pregătire.</div>
-                            <div class="card-button"><a href="#formbox">Doresc oferta</a></div>
-                        </div>
-
+                <div class="arr button-next">
+                  <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="path-1-inside-1_430_3" fill="white">
+                    <path d="M72 36C72 55.8823 55.8823 72 36 72C16.1177 72 0 55.8823 0 36C0 16.1177 16.1177 0 36 0C55.8823 0 72 16.1177 72 36Z"/>
+                    </mask>
+                    <path d="M20 35C19.7239 35 19.5 35.2239 19.5 35.5C19.5 35.7761 19.7239 36 20 36V35ZM52 35.5L52.3494 35.8577C52.4457 35.7636 52.5 35.6346 52.5 35.5C52.5 35.3654 52.4457 35.2364 52.3494 35.1423L52 35.5ZM40.5758 23.6423C40.3782 23.4494 40.0617 23.4531 39.8687 23.6506C39.6758 23.8482 39.6795 24.1647 39.877 24.3577L40.5758 23.6423ZM39.877 46.6423C39.6795 46.8353 39.6758 47.1518 39.8687 47.3494C40.0617 47.5469 40.3782 47.5506 40.5758 47.3577L39.877 46.6423ZM20 36H52V35H20V36ZM52.3494 35.1423L40.5758 23.6423L39.877 24.3577L51.6506 35.8577L52.3494 35.1423ZM51.6506 35.1423L39.877 46.6423L40.5758 47.3577L52.3494 35.8577L51.6506 35.1423ZM71 36C71 55.33 55.33 71 36 71V73C56.4345 73 73 56.4345 73 36H71ZM36 71C16.67 71 1 55.33 1 36H-1C-1 56.4345 15.5655 73 36 73V71ZM1 36C1 16.67 16.67 1 36 1V-1C15.5655 -1 -1 15.5655 -1 36H1ZM36 1C55.33 1 71 16.67 71 36H73C73 15.5655 56.4345 -1 36 -1V1Z" fill="#ADAAA8" mask="url(#path-1-inside-1_430_3)"/>
+                    </svg>
                     
-                    </div>
-
+                  
                 </div>
-                
+              </div>
             </div>
+
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card-icon">
+                    <img
+                      src="../example.github.io/resource/icon-aburi.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-title">Camera de aburi</div>
+                  <div class="card-descr">
+                    Regim de temperaturi ușoare de la 45 la 100 de grade, vă
+                    permite să încălziți profund mușchii și articulațiile fără
+                    nici o sarcină asupra inimii.
+                  </div>
+                  <div class="card-button">
+                    <a href="#formbox">Doresc oferta</a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="card-icon">
+                    <img
+                      src="../example.github.io/resource/icon-dumbbell.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-title">Antrenamente copii</div>
+                  <div class="card-descr">
+                    Programul de antrenament în grup pentru copii oferă o gamă
+                    largă de antrenamente interesante.
+                  </div>
+                  <div class="card-button">
+                    <a href="#formbox">Doresc oferta</a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="card-icon">
+                    <img
+                      src="../example.github.io/resource/icon-cardio.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-title">Sală cardio</div>
+                  <div class="card-descr">
+                    Benzi de alergat, biciclete fitness, biciclete eliptice,
+                    stepper.
+                  </div>
+                  <div class="card-button">
+                    <a href="#formbox">Doresc oferta</a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="card-icon">
+                    <img
+                      src="../example.github.io/resource/icon-dumbbell.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-title">Sala de forță</div>
+                  <div class="card-descr">
+                    Echipat cu o linie ultra-modernă de simulatoare.
+                  </div>
+                  <div class="card-button">
+                    <a href="#formbox">Doresc oferta</a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="card-icon">
+                    <img
+                      src="../example.github.io/resource/icon-piscina.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-title">Piscina de 25 metri</div>
+                  <div class="card-descr">
+                    Metodă de curățarea apei constituită din 5 etape, cu
+                    utilizarea sării și fără miros de clor.
+                  </div>
+                  <div class="card-button">
+                    <a href="#formbox">Doresc oferta</a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="card-icon">
+                    <img
+                      src="../example.github.io/resource/icon-step.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-title">Antrenamente adulți</div>
+                  <div class="card-descr">
+                    Program de antrenamente extins conceput pentru o gamă largă
+                    de preferinţe şi nivel de pregătire.
+                  </div>
+                  <div class="card-button">
+                    <a href="#formbox">Doresc oferta</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-            <!-- <div class="action">
-                <p>DOAR 5 ZILE — 25-30 NOIEMBRIE!</p>
-                <div id="underconstruction-container">
-                    <div id="content">
-                        <div id="timer_wrap" class="hasCountdown">
-                            <div id="clock">
-                                <div class="countdown_row countdown_show4">
-                                    <div class="countdown_section">
-                                        <div class="countdown_amount">
-                                            <div id='day'>
-                                                <p id='day2'></p>
-                                                <p id='day3'></p>
+        <!-- <div class="action">
+                        <p>DOAR 5 ZILE — 25-30 NOIEMBRIE!</p>
+                        <div id="underconstruction-container">
+                            <div id="content">
+                                <div id="timer_wrap" class="hasCountdown">
+                                    <div id="clock">
+                                        <div class="countdown_row countdown_show4">
+                                            <div class="countdown_section">
+                                                <div class="countdown_amount">
+                                                    <div id='day'>
+                                                        <p id='day2'></p>
+                                                        <p id='day3'></p>
+                                                    </div>
+                                                </div><br>ZILE
                                             </div>
-                                        </div><br>ZILE
-                                    </div>
-
-                                    <div class="countdown_section">
-                                        <div class="countdown_amount">
-                                            <div id='hour'>
-                                                <p id='hour2'></p>
-                                                <p id='hour3'></p>
+        
+                                            <div class="countdown_section">
+                                                <div class="countdown_amount">
+                                                    <div id='hour'>
+                                                        <p id='hour2'></p>
+                                                        <p id='hour3'></p>
+                                                    </div>
+                                                </div><br>ORE
                                             </div>
-                                        </div><br>ORE
-                                    </div>
-
-                                    <div class="countdown_section">
-                                        <div class="countdown_amount">
-                                            <div id='min'>
-                                                <p id='min2'></p>
-                                                <p id='min3'></p>
+        
+                                            <div class="countdown_section">
+                                                <div class="countdown_amount">
+                                                    <div id='min'>
+                                                        <p id='min2'></p>
+                                                        <p id='min3'></p>
+                                                    </div>
+                                                </div><br>MINUTE
                                             </div>
-                                        </div><br>MINUTE
-                                    </div>
-
-                                    <div class="countdown_section">
-                                        <div class="countdown_amount">
-                                            <div id='sec'>
-                                                <p id='sec2'></p>
-                                                <p id='sec3'></p>
+        
+                                            <div class="countdown_section">
+                                                <div class="countdown_amount">
+                                                    <div id='sec'>
+                                                        <p id='sec2'></p>
+                                                        <p id='sec3'></p>
+                                                    </div>
+                                                </div><br>SECUNDE
                                             </div>
-                                        </div><br>SECUNDE
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+        <div class="popup-bg">
+          <div class="popup">
+            <div id="formbox">
+              <!-- <img alt="close" class="close-popup"
+                            src="<?php bloginfo('stylesheet_directory'); ?>/landing/resources/svg/x.svg" /> -->
+              <div class="form-title">COMPLETAȚI FORMULARUL</div>
+              <div class="form-subtitle">
+                și aflați despre toate<br />abonamentele și 🔥 promoțiile!
+              </div>
+
+              <form
+                class="register-form form"
+                method="post"
+                action="../index.php"
+                id="send_form_data"
+              >
+                <input type="text" name="name" placeholder="Nume*" required />
+
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="+373 (XX) XX-XX-XX"
+                  maxlength="19"
+                  pattern="\+373\s\(\d{2}\)\s\d{2}-\d{2}-\d{2}"
+                  required
+                />
+
+                <div class="button-color btn">
+                  <input
+                    type="submit"
+                    value="TRIMITE CEREREA"
+                    id="submitForm"
+                  />
                 </div>
-            </div> -->
-       
 
-    <div class="popup-bg">
-        <div class="popup">
-            <div id='formbox'>
-                <!-- <img alt="close" class="close-popup"
-                    src="<?php bloginfo('stylesheet_directory'); ?>/landing/resources/svg/x.svg" /> -->
-                <div class="form-title">COMPLETAȚI FORMULARUL</div>
-                <div class="form-subtitle">și aflați despre toate<br />abonamentele și 🔥 promoțiile!</div>
-                
-                <form class="register-form form" method="post" action="../index.php" id="send_form_data">
-                    <input type='text' name="name" placeholder='Nume*' required />
-
-                    <input type="text" id="phone" name="phone" placeholder="+373 (XX) XX-XX-XX" maxlength="19"
-                        pattern="\+373\s\(\d{2}\)\s\d{2}-\d{2}-\d{2}" required />
-
-                    <div class="button-color"><input type='submit' value='TRIMITE CEREREA' id="submitForm"/></div>
-                    
-
-                    <input class="form-check-input" type="checkbox" required value="true" name="validate" checked
-                        style="display: none;">
-                    <input type="hidden" name="subscribe" value="true">
-                    <input type="hidden" name="landing" value="true">
-					<input type="hidden" name="redirectToLanding" value="true">
-                </form>
-                <div id="form_message" style="display: none; margin-top: 20px; color: green; font-size: 18px;"></div>
-
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  required
+                  value="true"
+                  name="validate"
+                  checked
+                  style="display: none"
+                />
+                <input type="hidden" name="subscribe" value="true" />
+                <input type="hidden" name="landing" value="true" />
+                <input type="hidden" name="redirectToLanding" value="true" />
+              </form>
+              <div
+                id="form_message"
+                style="
+                  display: none;
+                  margin-top: 20px;
+                  color: green;
+                  font-size: 18px;
+                  font-family: gilroy-regilar;
+                "
+              ></div>
             </div>
+          </div>
         </div>
-    </div>
 
-
-    <div id="contacte" class="footer">
-        <div class="footer-title">Contacte</div>
-        <div class="footer-contacts">
+        <div id="contacte" class="footer">
+          <div class="footer-title">Contacte</div>
+          <div class="footer-contacts">
             <div class="phone-numbs">
-                <a href="tel:+37360000707">+373 60 000 707</a>
-                <a href="tel:022000707">022 000 707</a>
+              <a href="tel:+37360000707">+373 60 000 707</a>
+              <a href="tel:022000707">022 000 707</a>
             </div>
             <div class="devider-footer"></div>
             <div class="adress">Botanica, str. Grenoble 259/ 16</div>
+          </div>
         </div>
+
+        <div class="copyright">
+          <div class="details">
+            Copyright © 2009-2024. Фитнес клуб Fitness One
+          </div>
+        </div>
+      </div>
     </div>
+  </body>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<div class="copyright">
-        <div class="details">Copyright © 2009-2024. Фитнес клуб Fitness One</div>
-    </div>
+  <script
+    async
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  ></script>
 
-</body>
+  <!-- <script async src="<?php bloginfo('stylesheet_directory'); ?>/landing/modalpopup.js"></script> -->
 
-<script  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- <script async src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- <script async src="<?php bloginfo('stylesheet_directory'); ?>/landing/caunter.js"></script> -->
 
+  <!-- <script async src="<?php bloginfo('stylesheet_directory'); ?>/landing/index.js"></script> -->
 
-<!-- <script async src="<?php bloginfo('stylesheet_directory'); ?>/landing/modalpopup.js"></script> -->
-
-
-<!-- <script async src="<?php bloginfo('stylesheet_directory'); ?>/landing/caunter.js"></script> -->
-
-<!-- <script async src="<?php bloginfo('stylesheet_directory'); ?>/landing/index.js"></script> -->
-
-<script>
+  <script>
     // Автоформатирование номера телефона
-    document.getElementById('phone').addEventListener('input', function (event) {
-        let input = event.target.value.replace(/\D/g, ''); // Удаляем все нецифровые символы
-        let formattedPhone = '+373'; // Начинаем с кода страны
+    document
+      .getElementById("phone")
+      .addEventListener("input", function (event) {
+        let input = event.target.value.replace(/\D/g, ""); // Удаляем все нецифровые символы
+        let formattedPhone = "+373"; // Начинаем с кода страны
 
         if (input.length > 3) {
-            formattedPhone += ' (' + input.substring(3, 5); // Код региона
+          formattedPhone += " (" + input.substring(3, 5); // Код региона
         }
         if (input.length > 5) {
-            formattedPhone += ') ' + input.substring(5, 7); // Первые две цифры
+          formattedPhone += ") " + input.substring(5, 7); // Первые две цифры
         }
         if (input.length > 7) {
-            formattedPhone += '-' + input.substring(7, 9); // Вторые две цифры
+          formattedPhone += "-" + input.substring(7, 9); // Вторые две цифры
         }
         if (input.length > 9) {
-            formattedPhone += '-' + input.substring(9, 11); // Третьи две цифры
+          formattedPhone += "-" + input.substring(9, 11); // Третьи две цифры
         }
 
         event.target.value = formattedPhone; // Обновляем значение поля
-    });
+      });
 
     // Обработка отправки формы
-    document.getElementById('submitForm').addEventListener('click', function () {
-        
-
-        const phoneInput = document.getElementById('phone');
+    document
+      .getElementById("submitForm")
+      .addEventListener("click", function () {
+        const phoneInput = document.getElementById("phone");
         const phonePattern = /^\+373\s\(\d{2}\)\s\d{2}-\d{2}-\d{2}$/; // Регулярное выражение для проверки
 
         // Проверяем значение поля телефона
         if (!phonePattern.test(phoneInput.value)) {
-            alert('Vă rugăm să introduceți numărul în formatul: +373 (XX) XX-XX-XX');
-            return; // Останавливаем выполнение, если номер неверен
+          alert(
+            "Vă rugăm să introduceți numărul în formatul: +373 (XX) XX-XX-XX"
+          );
+          return; // Останавливаем выполнение, если номер неверен
         } else {
-			 // Показать сообщение пользователю
-			const messageBox = document.getElementById('form_message');
-			messageBox.textContent = 'Vă mulțumim pentru cererea dumneavoastră! Vă vom contacta în cel mai scurt timp.';
-			messageBox.style.display = 'block';
-			messageBox.style.color = 'white';
-            messageBox.style.textAlign = 'center';
-            messageBox.style.marginTop = '40px';
+          // Показать сообщение пользователю
+          const messageBox = document.getElementById("form_message");
+          messageBox.textContent =
+            "Vă mulțumim pentru cererea dumneavoastră! Vă vom contacta în cel mai scurt timp.";
+          messageBox.style.display = "block";
+          messageBox.style.color = "white";
+          messageBox.style.textAlign = "center";
+          messageBox.style.marginTop = "40px";
 
-			// Очистить поле ввода
-			//phoneInput.value = '';
-			document.getElementById("send_form_data").submit();
-			//event.preventDefault(); // Предотвращаем перезагрузку страницы
-		}
+          // Очистить поле ввода
+          //phoneInput.value = '';
+          document.getElementById("send_form_data").submit();
+          //event.preventDefault(); // Предотвращаем перезагрузку страницы
+        }
+      });
+  </script>
 
-       
-    });
-</script>
-
-<script>
+  <script>
     var swiper = new Swiper(".swiper", {
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        loop:true,
-        watchOverFlow:true,
-        spaceBetween:20,
-        
-        navigation: {
-            nextEl: ".button-next",
-            prevEl: ".button-prev",
-        },
-    });
-</script>
+      slidesPerView: "auto",
+      centeredSlides: true,
+      loop: true,
+      watchOverFlow: true,
+      spaceBetween: 20,
 
+      navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
+    });
+  </script>
+
+  
 </html>
+
+
